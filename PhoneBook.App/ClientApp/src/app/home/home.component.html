@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+
+<mat-form-field>
+  <mat-label>Search</mat-label>
+  <input type="search" matInput (change)="getEntries($event.target.value)">
+</mat-form-field>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">phone number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entries" >
+      <td>{{entry.name}}</td>
+      <td>{{entry.phoneNumber}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+
+<footer>
+  <button mat-fab (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</footer>

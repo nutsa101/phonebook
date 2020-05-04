@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{title}}</h1>
+
+<form [formGroup]="entryForm">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Phone number</mat-label>
+      <input matInput formControlName="phoneNumber">
+    </mat-form-field>
+  </div>
+</form>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="entryForm.value" cdkFocusInitial [disabled]="!entryForm.valid" >Add</button>
+</div>
